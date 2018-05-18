@@ -4,10 +4,17 @@ Independent study capstone for spring 2018. This capstone focuses on ChIP-seq an
 **Summarization of this semester of your independent study**
 
 **Detailed list of all files within the GitHub repository**
-- Generic_HPC_Script.sh (from Megan)
-- bwa_script.sh (Alignment with BWA on the HPC)
-- bamtobed (R script)
-- sicer_script.sh (peak calling with SICER)
+This GitHub repository has five files:
+  - Generic_HPC_Script.sh
+    - This HPC script was provided by Megan as a base script to design other scripts in the repository.
+  - bwa_script.sh
+    - This HPC script will perform the BWA algorithm to align the fastq files to the HG19 reference genome.
+  - bamtobed (R script)
+    - This R script will transform the bam file from the BWA alignment to a bed file for SICER peak calling.
+  - sicer_script.sh 
+    - This HPC script will call peaks using the SICER algorithm. This script will call peaks using input controls.
+  - sicer_diff_script.sh
+      - This HPC script will call peaks using the SICER algorithm. This script will perform differential peak calling.
 
 ### ChIP-seq data analysis - command line, bash scripting
 1.	What tools are you using to analyze and visualize your results? Provide a detailed list with citations when possible.
@@ -92,8 +99,7 @@ Independent study capstone for spring 2018. This capstone focuses on ChIP-seq an
 - ENCODE Blacklist regions are regions of the genome that have a high signal/count mappability due to their unstructured and highly repetitive nature (e.g. centromeres). These regions were defined by showing enrichment across multiple ChIP-seq experiments, regardless of IP target. The blacklisted ChIP peaks are cell type and experimental independent and therefore need to be filtered out to remove ‘false positive’ peaks during ChIP-seq analysis (Carroll et al, 2014. Front Genet). 
 
 8.	What are the next steps after peak calling? How do you associate biological function to your areas of enrichment? Write a potential walkthrough of tools that could be used, either on the command line or in R.
-- After peak calling,
-- GO
-- Tools
+- After peak calling, the peaks need to be annotated so peaks with genomic context can be defined. To accomplish this, ChIPpeakAnno (Zhu et al, 2010. BMC Bioinformatics.)and ChIPseeker (Yu et al, 2015. Bioinformatics.)from Bioconductor can be used. Here, ChIPpeakAnno will obtain gene information around the peak, including gene ontology terms to associate biological functions with the area of interest. Further, ChIPpeakAnno will find the nearest gene, TF binding sites, and other related functionalities. ChIPseeker, like ChIPpeakAnno, will annotate peaks and define the nearest gene. In addition, ChIPseeker allows the ChIP dataset to be compared with other ChIP sets in the GEO database. ChIPseeker can be used to create visualizations of the data including heatmaps, distance from TSS, enrichment at specific genomic features, etc. Next, differential binding analyiss can be performed with SICER (as described above) or runDiff in R. Differential binding will define unique peaks in the treatment or experimental condition compared to solvent. Lastly, GO (gene ontology) term analysis and motif analysis can be performed.  Biocondoctor (in R) offers packages to acocmplish both of these objectives.
+
 
 
