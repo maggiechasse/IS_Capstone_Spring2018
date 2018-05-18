@@ -74,7 +74,7 @@ Independent study capstone for spring 2018. This capstone focuses on ChIP-seq an
 
 #### 5.	Alignment QC:
 - Look for a tool that could be used to assess ChIP strength using the aligned BAM files. Provide the website and/or citation.
-  - A tool to QC the ChIP from the aligend BAM files is MultiQC. 
+  - A tool to QC the ChIP from the aligend BAM files is MultiQC. Source: http://multiqc.info Citation: Ewels et al, 2016. Bioinformatics.
 - Write a command that could be used to generate QC figures or metrics.
   - Must be in the directory where bam files are located to run the following command: 
     - multiqc . *or* firefox multiqc_report.html & 
