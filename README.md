@@ -4,6 +4,10 @@ Independent study capstone for spring 2018. This capstone focuses on ChIP-seq an
 **Summarization of this semester of your independent study**
 
 **Detailed list of all files within the GitHub repository**
+- Generic_HPC_Script.sh (from Megan)
+- bwa_script.sh (Alignment with BWA on the HPC)
+- bamtobed (R script)
+- sicer_script.sh (peak calling with SICER)
 
 ### ChIP-seq data analysis - command line, bash scripting
 1.	What tools are you using to analyze and visualize your results? Provide a detailed list with citations when possible.
