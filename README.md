@@ -9,8 +9,8 @@ This GitHub repository has five files:
     - This HPC script was provided by Megan as a base script to design other scripts in the repository.
   - bwa_script.sh
     - This HPC script will perform the BWA algorithm to align the fastq files to the HG19 reference genome.
-  - bamtobed (R script)
-    - This R script will transform the bam file from the BWA alignment to a bed file for SICER peak calling.
+  - bamtobed (terminal script)
+    - This terminal script will transform the bam file from the BWA alignment to a bed file for SICER peak calling using bedtools bamtobed command.
   - sicer_script.sh 
     - This HPC script will call peaks using the SICER algorithm. This script will call peaks using input controls.
   - sicer_diff_script.sh
