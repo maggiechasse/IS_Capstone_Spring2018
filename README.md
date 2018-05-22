@@ -38,7 +38,7 @@ This GitHub repository has five files:
 
 3.  Location of the data: /primary/projects/grohar/vari-core-generated-data/Capstone_Spring_2018
 - Using Linux commands, change to this directory on the HPC. What is the command?
-  - cd 
+  - cd /primary/projects/grohar/vari-core-generated-data/Capstone_Spring_2018
 - How many files are in this directory? What is the command?
   - 12 files
   - ls | wc *(this command will count all files in the directory)* 
@@ -93,7 +93,7 @@ This GitHub repository has five files:
   - To call peaks for histone modifications, I am choosing to use SICER (Zhang et al, 2009. Bioinformatics.). Unlike MACS, a well-established peak calling program, SICER defines diffuse and broad distribution, rather than a well-defined peak like transcription factor binding. For this experiment, the IP was performed for H3K9me3, an abundant histone mark that is established at highly repetitive sequences. Therefore, to properly assign peaks, an algorithm and program built to identify diffuse domains is required. SICER (Spatial clustering method for the Identification of ChIP-Enriched Regions) pools signals from nucleosomes in a region of the genome to create ‘islands’, rather than the traditional window. Pooling the signals improves the signal-to-noise ratio and therefore helps to overcome the noise of diffuse peaks. SICER can be used for peak calling with and without a control as well as differential peak calling. The parameters to be defined are fragment size, window size, and gap size. Source code: https://home.gwu.edu/~wpeng/Software.htm 
 - Using your previously generated alignment files, identify areas of enrichment in your sequencing data relative to input. What considerations need to be made to call peaks for your type of ChIP-seq data? (Think about histone marks vs. transcription factors)
   - Peak calling algorithms for histone marks vs. transcription factors were briefly discussed above. Unlike histone marks (or chromatin remodelers) which will form broad diffuse peaks across the genome, transcription factors bind to DNA through consensus sequence recognition and therefore form distinct sharp peaks. Thus, peak calling for a transcription factor IP would benefit from the MACS algorithm, rather than SICER (Zhang et al, 2008. Genome Biol.). 
-- Generate a new HPC job script with your peak calling commands and appropriate parameters. Make sure to include it in the GitHub Repo.
+**- Generate a new HPC job script with your peak calling commands and appropriate parameters. Make sure to include it in the GitHub Repo.**
 
 7.	What are the ENCODE Blacklist regions? Why are they used to filter ChIP-seq peaks? You can find the files here.
 - ENCODE Blacklist regions are regions of the genome that have a high signal/count mappability due to their unstructured and highly repetitive nature (e.g. centromeres). These regions were defined by showing enrichment across multiple ChIP-seq experiments, regardless of IP target. The blacklisted ChIP peaks are cell type and experimental independent and therefore need to be filtered out to remove ‘false positive’ peaks during ChIP-seq analysis (Carroll et al, 2014. Front Genet). 
