@@ -1,2 +1,7 @@
-#in R
-library(
+#In Terminal
+wget https://github.com/arq5x/bedtools2/releases/download/v2.25.0/bedtools-2.25.0.tar.gz
+tar -zxvf bedtools-2.25.0.tar.gz
+cd bedtools2
+
+#BamtoBed
+bamToBed -i Capstone.bam > Capstone.bed
