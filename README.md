@@ -2,15 +2,17 @@
 Independent study capstone for spring 2018. This capstone focuses on ChIP-seq analysis using command line, HPC scripting, and R. 
 
 **Summarization of this semester of your independent study**
+- This semester I transitioned my focus from R-programming and RNA-seq related analysis to HPC and command line programming with ChIP-seq analysis. To accomplish this goal, I completed the following coursera modules: DNA algorithms, command line, and statistics for genomic data. Further, through supplementation by Megan, I became familiar with operating on the VARI HPC, including etiquette, writing scripts, and submitting jobs. Through the completion of this capstone, I will have experience aligning ChIP-seq reads to a reference genome, calling peaks, and performing downstream analysis of gene functionality, etc. Overall, this semester has given me the tools to confidently analyze ChIP-seq data with supervision and mentoring by the Bioionformatics core.
 
 **Detailed list of all files within the GitHub repository**
-This GitHub repository has five files:
+- To sign on to HPC: ssh maggie.chasse@submit.hpc.vai.org
+- This GitHub repository has five files:
   - Generic_HPC_Script.sh
     - This HPC script was provided by Megan as a base script to design other scripts in the repository.
   - bwa_script.sh
     - This HPC script will perform the BWA algorithm to align the fastq files to the HG19 reference genome.
-  - bamtobed (terminal script)
-    - This terminal script will transform the bam file from the BWA alignment to a bed file for SICER peak calling using bedtools bamtobed command.
+  - bamtobed (command line script)
+    - This command line script will transform the bam file from the BWA alignment to a bed file for SICER peak calling using bedtools bamtobed command.
   - sicer_script.sh 
     - This HPC script will call peaks using the SICER algorithm. This script will call peaks using input controls.
   - sicer_diff_script.sh
