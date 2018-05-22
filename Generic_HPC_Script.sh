@@ -1,3 +1,5 @@
+#PBS: portable batch system
+
 #! /bin/bash
 #PBS -l walltime=200:00:00 #Max run time is 200 hours
 #PBS -l mem=20gb #Request 20gb memory
